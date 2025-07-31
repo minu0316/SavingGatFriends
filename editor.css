@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.editor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #ecf0f1;
+    margin-bottom: 30px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.tool-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.tool-section h3 {
+    margin: 0 0 15px 0;
+    color: #f39c12;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 5px;
+}
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tool-btn {
+    background-color: #7f8c8d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.tool-btn:hover {
+    background-color: #95a5a6;
+}
+
+.tool-btn.active {
+    background-color: #27ae60;
+    box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
+}
+
+.image-uploads {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.upload-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-item label {
+    color: #ecf0f1;
+    font-size: 14px;
+    min-width: 60px;
+}
+
+.upload-item input[type="file"] {
+    background-color: #7f8c8d;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.stage-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.setting-item label {
+    color: #ecf0f1;
+    font-size: 14px;
+    min-width: 100px;
+}
+
+.setting-item input[type="number"],
+.setting-item input[type="text"] {
+    background-color: #7f8c8d;
+    color: white;
+    border: 1px solid #95a5a6;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 14px;
+    width: 150px;
+}
+
+.setting-item input[type="range"] {
+    width: 120px;
+    margin-right: 10px;
+}
+
+.setting-item span {
+    color: #f39c12;
+    font-size: 12px;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.setting-item input[type="number"]:focus,
+.setting-item input[type="text"]:focus {
+    outline: none;
+    border-color: #f39c12;
+    background-color: #95a5a6;
+}
+
+.map-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.map-controls button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.map-controls button:hover {
+    background-color: #c0392b;
+}
+
+#saveBtn {
+    background-color: #3498db;
+}
+
+#saveBtn:hover {
+    background-color: #2980b9;
+}
+
+#testBtn {
+    background-color: #27ae60;
+}
+
+#testBtn:hover {
+    background-color: #219a52;
+}
+
+.editor-main {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#editorCanvas {
+    border: 3px solid #8b4513;
+    background-color: #90EE90;
+    cursor: crosshair;
+}
+
+.instructions {
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #f39c12;
+}
+
+.instructions h3 {
+    margin: 0 0 15px 0;
+    color: #f39c12;
+}
+
+.instructions p {
+    margin: 5px 0;
+    color: #bdc3c7;
+}

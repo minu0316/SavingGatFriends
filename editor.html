@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Cats - Map Editor</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    <div class="editor-container">
+        <h1>🐱 Map Editor 🗺️</h1>
+        
+        <div class="toolbar">
+            <div class="tool-section">
+                <h3>도구 선택</h3>
+                <div class="tools">
+                    <button class="tool-btn active" data-tool="wall">🧱 벽</button>
+                    <button class="tool-btn" data-tool="friend1">😿 친구1</button>
+                    <button class="tool-btn" data-tool="friend2">🙀 친구2</button>
+                    <button class="tool-btn" data-tool="friend3">😹 친구3</button>
+                    <button class="tool-btn" data-tool="friend4">😻 친구4</button>
+                    <button class="tool-btn" data-tool="friend5">😽 친구5</button>
+                    <button class="tool-btn" data-tool="friend6">🐾 친구6</button>
+                    <button class="tool-btn" data-tool="friend7">🐈 친구7</button>
+                    <button class="tool-btn" data-tool="friend8">😸 친구8</button>
+                    <button class="tool-btn" data-tool="friend9">😺 친구9</button>
+                    <button class="tool-btn" data-tool="friend10">😼 친구10</button>
+                    <button class="tool-btn" data-tool="enemy">🐕 적</button>
+                    <button class="tool-btn" data-tool="exit">🚪 출구</button>
+                    <button class="tool-btn" data-tool="player">🐱 시작점</button>
+                    <button class="tool-btn" data-tool="empty">🧹 지우기</button>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3>이미지 설정</h3>
+                <div class="image-uploads">
+                    <div class="upload-item">
+                        <label>플레이어: <input type="file" id="playerImg" accept="image/png"></label>
+                        <img id="playerPreview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구1: <input type="file" id="friend1Img" accept="image/png"></label>
+                        <img id="friend1Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구2: <input type="file" id="friend2Img" accept="image/png"></label>
+                        <img id="friend2Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구3: <input type="file" id="friend3Img" accept="image/png"></label>
+                        <img id="friend3Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구4: <input type="file" id="friend4Img" accept="image/png"></label>
+                        <img id="friend4Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구5: <input type="file" id="friend5Img" accept="image/png"></label>
+                        <img id="friend5Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구6: <input type="file" id="friend6Img" accept="image/png"></label>
+                        <img id="friend6Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구7: <input type="file" id="friend7Img" accept="image/png"></label>
+                        <img id="friend7Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구8: <input type="file" id="friend8Img" accept="image/png"></label>
+                        <img id="friend8Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구9: <input type="file" id="friend9Img" accept="image/png"></label>
+                        <img id="friend9Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>친구10: <input type="file" id="friend10Img" accept="image/png"></label>
+                        <img id="friend10Preview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>적: <input type="file" id="enemyImg" accept="image/png"></label>
+                        <img id="enemyPreview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>벽: <input type="file" id="wallImg" accept="image/png"></label>
+                        <img id="wallPreview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>출구: <input type="file" id="exitImg" accept="image/png"></label>
+                        <img id="exitPreview" src="" style="display:none;" width="32" height="32">
+                    </div>
+                    <div class="upload-item">
+                        <label>바닥색: <input type="color" id="backgroundColorPicker" value="#90EE90"></label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3>스테이지 설정</h3>
+                <div class="stage-settings">
+                    <div class="setting-item">
+                        <label>스테이지 번호: <input type="number" id="stageNumber" value="1" min="1" max="999"></label>
+                    </div>
+                    <div class="setting-item">
+                        <label>스테이지 이름: <input type="text" id="stageName" placeholder="예: 첫 번째 모험" maxlength="50"></label>
+                    </div>
+                    <div class="setting-item">
+                        <label>플레이어 속도: <input type="range" id="playerSpeed" min="100" max="500" value="200" step="50"></label>
+                        <span id="playerSpeedValue">200ms</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>적 이동속도: <input type="range" id="enemySpeed" min="4" max="10" value="8" step="1"></label>
+                        <span id="enemySpeedValue">8 프레임</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3>맵 관리</h3>
+                <div class="map-controls">
+                    <button id="clearBtn">🗑️ 맵 지우기</button>
+                    <button id="saveBtn">💾 JSON 저장</button>
+                    <button id="exportBtn">📋 코드 복사</button>
+                    <input type="file" id="loadBtn" accept=".json" style="display:none;">
+                    <button onclick="document.getElementById('loadBtn').click()">📁 맵 불러오기</button>
+                    <button id="testBtn">▶️ 테스트 플레이</button>
+                    <div class="setting-item">
+                        <label>스테이지 불러오기: 
+                            <select id="stageSelect"></select>
+                        </label>
+                        <button id="loadStageBtn">불러오기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="editor-main">
+            <canvas id="editorCanvas" width="1000" height="500"></canvas>
+        </div>
+        
+        <div class="instructions">
+            <h3>사용법</h3>
+            <p>• 왼쪽에서 도구를 선택하고 맵을 클릭하여 배치</p>
+            <p>• PNG 이미지를 업로드하여 캐릭터 모습 변경</p>
+            <p>• 맵을 JSON 파일로 저장/불러오기 가능</p>
+            <p>• 테스트 플레이로 만든 맵을 바로 확인</p>
+        </div>
+    </div>
+    
+    <script src="stages.js"></script>
+    <script src="editor.js"></script>
+</body>
+</html>

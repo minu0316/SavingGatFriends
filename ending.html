@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Cats - 엔딩 설정</title>
+    <link rel="stylesheet" href="ending.css">
+</head>
+<body>
+    <div class="ending-editor-container">
+        <h1>🏆 엔딩 화면 설정 🎮</h1>
+        
+        <div class="editor-section">
+            <div class="settings-section">
+                <h3>엔딩 설정</h3>
+                <div class="setting-item">
+                    <label>축하 메시지: <input type="text" id="congratsMessage" value="🎉 축하합니다! 🎉" maxlength="50"></label>
+                </div>
+                <div class="setting-item">
+                    <label>게임 완료 메시지: <input type="text" id="completeMessage" value="모든 고양이 친구들을 구하셨습니다!" maxlength="100"></label>
+                </div>
+                <div class="setting-item">
+                    <label>엔딩 이미지: <input type="file" id="endingImage" accept="image/*"></label>
+                    <img id="endingPreview" src="" style="display:none;" width="300" height="auto">
+                </div>
+                <div class="setting-item">
+                    <label>배경색: <input type="color" id="endingBgColor" value="#2c3e50"></label>
+                </div>
+                <div class="setting-item">
+                    <label>이니셜 입력 제목: <input type="text" id="initialsTitle" value="이름을 입력하세요 (3글자):" maxlength="30"></label>
+                </div>
+            </div>
+            
+            <div class="preview-section">
+                <h3>미리보기</h3>
+                <div class="ending-preview" id="endingPreview">
+                    <div class="ending-content">
+                        <div class="ending-image-container" id="endingImageContainer" style="display:none;">
+                            <img id="previewImage" src="" alt="엔딩 이미지">
+                        </div>
+                        <h1 id="previewCongrats">🎉 축하합니다! 🎉</h1>
+                        <p id="previewComplete">모든 고양이 친구들을 구하셨습니다!</p>
+                        <div class="score-display">
+                            <h2>최종 점수: <span id="previewScore">12,500</span></h2>
+                        </div>
+                        <div class="initials-section">
+                            <p id="previewInitialsTitle">이름을 입력하세요 (3글자):</p>
+                            <div class="initials-input">
+                                <input type="text" maxlength="1" class="initial-box" value="A">
+                                <input type="text" maxlength="1" class="initial-box" value="B">
+                                <input type="text" maxlength="1" class="initial-box" value="C">
+                            </div>
+                            <button class="save-score-btn">점수 저장</button>
+                        </div>
+                        <div class="ending-buttons">
+                            <button>다시 하기</button>
+                            <button>메인 메뉴</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="exportBtn">📋 코드 복사</button>
+            <button id="previewGameBtn">▶️ 게임에서 보기</button>
+        </div>
+        
+        <div class="instructions">
+            <h3>사용법</h3>
+            <p>• 엔딩 이미지를 업로드하여 게임 완료 화면 설정</p>
+            <p>• 축하 메시지와 완료 메시지를 자유롭게 커스터마이징</p>
+            <p>• 아케이드 스타일 3글자 이니셜 입력 시스템</p>
+            <p>• "📋 코드 복사" 버튼으로 설정을 game.js에 적용</p>
+        </div>
+    </div>
+    
+    <script src="ending.js"></script>
+</body>
+</html>

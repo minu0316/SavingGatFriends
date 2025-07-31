@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Cats - 타이틀 설정</title>
+    <link rel="stylesheet" href="title.css">
+</head>
+<body>
+    <div class="title-editor-container">
+        <h1>🐱 게임 타이틀 설정 🎨</h1>
+        
+        <div class="editor-section">
+            <div class="settings-section">
+                <h3>타이틀 설정</h3>
+                <div class="setting-item">
+                    <label>게임 제목: <input type="text" id="gameTitle" value="🐱 Saving Cats 🐱" maxlength="50"></label>
+                </div>
+                <div class="setting-item">
+                    <label>타이틀 이미지: <input type="file" id="titleImage" accept="image/*"></label>
+                    <img id="titlePreview" src="" style="display:none;" width="200" height="auto">
+                </div>
+                <div class="setting-item">
+                    <label>배경색: <input type="color" id="titleBgColor" value="#2c3e50"></label>
+                </div>
+                <div class="setting-item">
+                    <label>시작버튼 텍스트: <input type="text" id="startBtnText" value="게임 시작" maxlength="20"></label>
+                </div>
+            </div>
+            
+            <div class="preview-section">
+                <h3>미리보기</h3>
+                <div class="title-preview" id="titlePreview">
+                    <div class="title-content">
+                        <div class="title-image-container" id="titleImageContainer" style="display:none;">
+                            <img id="previewImage" src="" alt="타이틀 이미지">
+                        </div>
+                        <h1 id="previewTitle">🐱 Saving Cats 🐱</h1>
+                        <p>좌우 방향키로 고양이를 조작하여 친구들을 구하세요!</p>
+                        <button id="previewStartBtn">게임 시작</button>
+                        <div class="menu-buttons">
+                            <button>맵 에디터</button>
+                            <button>설정</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="exportBtn">📋 코드 복사</button>
+            <button id="previewGameBtn">▶️ 게임에서 보기</button>
+        </div>
+        
+        <div class="instructions">
+            <h3>사용법</h3>
+            <p>• 타이틀 이미지를 업로드하여 게임 로고 설정</p>
+            <p>• 배경색과 텍스트를 자유롭게 커스터마이징</p>
+            <p>• "📋 코드 복사" 버튼으로 설정을 index.html에 적용</p>
+        </div>
+    </div>
+    
+    <script src="title.js"></script>
+</body>
+</html>
